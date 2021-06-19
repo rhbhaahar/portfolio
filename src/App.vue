@@ -1,22 +1,25 @@
 <template>
-    <HeaderNav msg="Header navigation"/>
-  <div class="content-wrapper">
+  <Header />
+  <div class="content-wrapper body-content-wrapper">
     <router-view />
   </div>
+  <Footer />
 </template>
 
 <script>
-import HeaderNav from './components/HeaderNav.vue'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 export default {
   name: 'App',
   components: {
-    HeaderNav
+    Header,
+    Footer
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 * {
   margin: 0;
   padding: 0;
@@ -26,6 +29,7 @@ html,
 body,
 #app {
   height: 100%;
+  background-color: #f1f2f9;
 }
 
 #app {
@@ -34,7 +38,14 @@ body,
 }
 
 .content-wrapper {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
+
+  &.body-content-wrapper {
+    min-height: calc(100% - 50px);
+    box-sizing: border-box;
+    padding-top: 20px;
+    background-color: #fff;
+  }
 }
 </style>

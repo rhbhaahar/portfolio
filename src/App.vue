@@ -1,20 +1,23 @@
 <template>
-  <Header />
-  <div class="content-wrapper body-content-wrapper">
+  <!-- <div class="content-wrapper body-content-wrapper">
     <router-view />
+  </div> -->
+  <div class="main">
+
   </div>
-  <Footer />
+  <div class="second-block">
+
+  </div>
+  <CircularMenu />
 </template>
 
 <script>
-import Header from './components/Header'
-import Footer from './components/Footer'
+import CircularMenu from './components/CircularMenu'
 
 export default {
   name: 'App',
   components: {
-    Header,
-    Footer
+    CircularMenu
   }
 }
 </script>
@@ -29,23 +32,39 @@ html,
 body,
 #app {
   height: 100%;
-  background-color: #f1f2f9;
+  background: url('./assets/background.png') repeat;
 }
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   color: #2c3e50;
+  display: flex;
+  align-items: center;
 }
 
 .content-wrapper {
-  max-width: 900px;
   margin: 0 auto;
 
   &.body-content-wrapper {
-    min-height: calc(100% - 50px);
     box-sizing: border-box;
     padding-top: 20px;
-    background-color: #fff;
+    width: calc(100% - 240px);
+    height: 75%;
+    // border-radius: 20px;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    background: #2c3e50;
   }
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  background: red;
+}
+
+.second-block {
+  width: 100%;
+  height: 400px;
+  background: purple;
 }
 </style>

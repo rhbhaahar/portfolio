@@ -6,5 +6,8 @@
   },
   "contacts": {
     "legend": "If you want me to join your project, use any contact method below. Usually I'll answer in 12 hours."
+  },
+  "main": {
+    "contactMe": "Contact me"
   }
 }

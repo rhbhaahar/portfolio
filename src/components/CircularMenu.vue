@@ -71,13 +71,12 @@ a {
 
 .menu-item,
 .menu-open-button {
-  background: #EEEEEE;
   border-radius: 100%;
   width: 80px;
   height: 80px;
   margin-left: -40px;
   position: absolute;
-  color: #FFFFFF;
+  color: #fff;
   text-align: center;
   line-height: 80px;
   -webkit-transform: translate3d(0, 0, 0);
@@ -135,7 +134,7 @@ a {
 }
 
 .menu {
-  position: absolute;
+  position: fixed;
   bottom: 120px;
   right: 120px;
   width: 80px;
@@ -154,6 +153,7 @@ a {
   -webkit-transform: scale(2, 2) translate3d(0, 0, 0);
   transform: scale(2, 2) translate3d(0, 0, 0);
   cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
   &:hover {
     -webkit-transform: scale(2.2, 2.2) translate3d(0, 0, 0);
@@ -255,7 +255,7 @@ a {
   left: 50%;
   transform: translate(-50%, 0);
   bottom: -80px;
-  width: 200px;
+  width: 210px;
   animation: pulse 2s infinite;
   -webkit-animation: pulse 1s infinite alternate;
 }

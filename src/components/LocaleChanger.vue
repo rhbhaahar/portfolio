@@ -1,16 +1,16 @@
 <template>
-  <div class="locale-changer-wrapper" v-click-outside="changeLocalesVisibility">
-    <div @click="changeLocalesVisibility(!showLocale)" class="current-locale">{{ $i18n.locale }}</div>
-    <transition name="fade">
-      <div class="locales" v-if="showLocale">
-        <span v-for="language in availableLanguages" :key="language" @click="setLanguage(language)">{{ languageNames[language] }}</span>
-      </div>
-    </transition>
+  <div class="locale-changer-wrapper">
+    <span
+      v-for="language in availableLanguages"
+      :key="language"
+      :class="{'active': language === $i18n.locale}"
+      @click="setLanguage(language)">
+      {{ languageNames[language] }}
+    </span>
   </div>
 </template>
 
 <script>
-import clickOutside from '../directives/clickOutside'
 import { languages } from '../utils/interfaces'
 
 export default {
@@ -18,7 +18,6 @@ export default {
   data() {
     return {
       availableLanguages: [],
-      showLocale: false,
       languageNames: languages
     }
   },
@@ -26,54 +25,41 @@ export default {
     this.availableLanguages = this.$i18n.availableLocales
   },
   methods: {
-    changeLocalesVisibility(bool) {
-      this.showLocale = bool || false
-    },
     setLanguage(language) {
       this.$i18n.locale = language
       localStorage.setItem('locale', language)
-      this.changeLocalesVisibility()
     }
-  },
-  directives: {
-    clickOutside
   }
 }
 </script>
 
 <style scoped lang="scss">
 .locale-changer-wrapper {
-  position: relative;
-  cursor: pointer;
+  display: flex;
+  background: #2c3e50;
+  padding: 8px 16px;
+  color: aliceblue;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
-  .current-locale {
-    padding: 10px 20px;
-  }
+  span {
+    margin-right: 8px;
+    cursor: pointer;
+    padding: 4px 12px;
+    border-radius: 4px;
 
-  .locales {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    border: 1px solid aliceblue;
-    background-color: #123;
-
-    span {
-      padding: 5px 10px;
-
-      &:hover {
-        background-color: rgba(0,0,0, .3);
-      }
+    &:last-child {
+      margin-right: 0;
     }
-  }
 
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity 0.5s ease;
-  }
+    &:hover {
+      background: rgba(240, 248, 255, 0.2);
+    }
 
-  .fade-enter-from,
-  .fade-leave-to {
-    opacity: 0;
+    &.active {
+      background: aliceblue;
+      color: #2c3e50;
+      opacity: 1;
+    }
   }
 }
 </style>

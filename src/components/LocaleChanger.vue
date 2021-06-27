@@ -36,7 +36,7 @@ export default {
 <style scoped lang="scss">
 .locale-changer-wrapper {
   display: flex;
-  background: #2c3e50;
+  background: #274472;
   padding: 8px 16px;
   color: aliceblue;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;

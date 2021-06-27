@@ -26,11 +26,11 @@ html,
 body,
 #app {
   height: 100%;
-  background: #fdfd96;
+  background: $blue-gray;
 }
 
 #app {
   font-family: Alegreya, Helvetica, Arial, sans-serif;
-  color: #2c3e50;
+  color: $deep-dark;
 }
 </style>

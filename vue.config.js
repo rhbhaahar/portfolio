@@ -13,5 +13,15 @@ module.exports = {
       compositionOnly: false,
       fullInstall: true
     }
+  },
+
+  css: {
+    loaderOptions: {
+      sass: {
+        additionalData: `
+          @import "@/styles/colors.scss";
+        `
+      }
+    }
   }
 }

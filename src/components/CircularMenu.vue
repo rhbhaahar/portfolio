@@ -1,5 +1,5 @@
 <template>
-  <nav class="menu" :class="{'opened': opened}" v-click-outside="closeMenu">
+  <nav class="menu" :class="{'opened': opened, 'show-mobile': mobileShown}" v-click-outside="closeMenu">
     <label class="menu-open-button" @click="opened = !opened">
       <img src="../assets/leha.png">
     </label>
@@ -25,6 +25,8 @@
 
     <div class="contact-me" v-if="!opened"> {{ $t('main.contactMe') }} </div>
   </nav>
+
+  <div class="contact-mobile" @click="toggleMenuOnMobile">Contact me!</div>
 </template>
 
 <script>
@@ -50,12 +52,16 @@ export default {
   },
   data() {
     return {
-      opened: false
+      opened: false,
+      mobileShown: false
     }
   },
   methods: {
     closeMenu() {
       this.opened = false
+    },
+    toggleMenuOnMobile() {
+      this.mobileShown = !this.mobileShown
     }
   },
   directives: {
@@ -92,8 +98,7 @@ a {
   height: 66px;
   line-height: 66px;
   margin-left: -33px;
-  box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   -webkit-transition-duration: 180ms;
   transition-duration: 180ms;
 
@@ -258,6 +263,24 @@ a {
   width: 210px;
   animation: pulse 2s infinite;
   -webkit-animation: pulse 1s infinite alternate;
+  text-shadow: 1px 1px 3px $light-white;
+}
+
+.contact-mobile {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 110px;
+  background: $light-white;
+  right: -36px;
+  transform: rotateZ(-90deg);
+  font-size: 20px;
+  padding: 4px;
+  border-radius: 8px 8px 0 0;
+
+  &:hover {
+    background: rgba(255,255,255, 0.5);
+  }
 }
 
 @keyframes pulse {
@@ -268,6 +291,26 @@ a {
 @-webkit-keyframes pulse {
   to {
     font-size: 30px;
+  }
+}
+
+@media(max-width: 900px) {
+  .contact-me {
+    display: none;
+  }
+
+  .contact-mobile {
+    display: block;
+  }
+
+  .menu {
+    right: -120px;
+    transition: all 1s ease;
+
+    &.show-mobile {
+      right: 50%;
+      transform: translate(50%, 0);
+    }
   }
 }
 </style>

@@ -1,5 +1,36 @@
 {
   "main": {
+    "header": "Hello stranger and welcome to my place.",
+    "selfDescription": "My name is Alexei, I'm a senior full-stack web developer and simply a nice guy. I like coding as much as shredding my guitar out. I provide clean code and excellent at developing and maintaining client/server applications with any modern DB support.",
+    "devExperience": "7+ years of commercial development",
+    "projectExperience": "More than 10 successfull projects",
+    "jsExperience": "Javascript proficiency",
+    "knowMe": "Get to know me better",
     "contactMe": "Contact me"
+  },
+  "skills": {
+    "title": "Skills",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "databases": "Databases",
+    "other": "Other",
+    "experience": "no experience | {n} year experience | {n} years experience",
+    "favouriteFramework": "favourite framework",
+    "favouriteDb": "favourite db",
+    "oneLove": "one love",
+    "moreThanApache": "> Apache",
+    "aws": "EC2, RDS, Serverless"
+  },
+  "projects": {
+    "title": "Projects",
+    "theme": "Theme",
+    "technologies": "Technologies",
+    "timeline": "Timeline",
+    "themes": {
+      "biotech": "Biotech",
+      "education": "Education",
+      "realEstate": "Real estate",
+      "airTravel": "Air travel"
+    }
   }
 }

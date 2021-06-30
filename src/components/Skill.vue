@@ -2,7 +2,7 @@
   <div class="skill-box">
     <div class="skill-box-inner">
       <div class="skill-box-front">
-        <img :src="require(`@/assets/${imageSource}`)">
+        <img :src="require(`@/assets/${imageSource}`)" />
         <span>{{ title }}</span>
       </div>
       <div class="skill-box-back" :class="{'favourite': favourite}">
